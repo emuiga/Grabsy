@@ -1,101 +1,105 @@
-# Modern Product Dashboard
+# E-Commerce Product Catalog
 
-A responsive, modern product dashboard built with Next.js, TypeScript, Tailwind CSS, and React Query.
+A modern e-commerce product catalog built with Next.js 14, featuring server-side rendering, responsive design, and a clean user interface.
 
 ## Features
 
-- 🎨 Modern and responsive UI with Tailwind CSS
-- 🔍 Product search and category filtering
-- 📱 Mobile-friendly design
-- ⚡ Fast data fetching with React Query
+- 🚀 Next.js 14 with App Router
+- 🎨 Modern UI with Tailwind CSS and shadcn/ui
+- 🔍 Server-side rendering for better SEO
+- 📱 Fully responsive design
+- 🔄 Real-time product filtering and search
+- ⭐ Product reviews and ratings
+- 🛒 Shopping cart functionality
+- 🔐 Authentication system
+- 📦 Product details with image gallery
 - 🎯 TypeScript for type safety
-- 🌙 Dark mode support
 
 ## Tech Stack
 
-- Next.js 13+ (App Router)
-- TypeScript
-- Tailwind CSS
-- React Query (TanStack Query)
-- DummyJSON API
+- **Framework:** Next.js 14
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **State Management:** React Context
+- **API Integration:** DummyJSON API
+- **Type Safety:** TypeScript
+- **Authentication:** NextAuth.js
+- **Deployment:** Vercel
 
 ## Getting Started
 
 1. Clone the repository:
-```bash
-git clone <repository-url>
-cd product-dashboard
-```
+   ```bash
+   git clone https://github.com/yourusername/ecommerce-catalog.git
+   cd ecommerce-catalog
+   ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
-3. Run the development server:
-```bash
-npm run dev
-```
+3. Create a `.env.local` file in the root directory:
+   ```
+   NEXT_PUBLIC_API_URL=https://dummyjson.com/products
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
 src/
-  ├── app/                    # Next.js app directory
-  │   ├── products/          # Product pages
-  │   │   ├── [id]/         # Product details page
-  │   │   └── page.tsx      # Product listing page
-  │   └── layout.tsx        # Root layout
-  ├── components/            # React components
-  │   ├── ui/               # UI components
-  │   │   ├── ProductCard.tsx
-  │   │   ├── ProductGrid.tsx
-  │   │   ├── SearchBar.tsx
-  │   │   └── CategoryFilter.tsx
-  │   └── layout/           # Layout components
-  ├── lib/                  # Utility functions
-  │   ├── api.ts           # API functions
-  │   └── types.ts         # TypeScript types
-  └── hooks/               # Custom React hooks
-      └── useProducts.ts   # Product data hooks
+├── app/                 # App router pages
+│   ├── (auth)/         # Authentication routes
+│   ├── products/       # Product pages
+│   └── api/            # API routes
+├── components/         # Shared components
+│   ├── ui/            # UI components
+│   └── shared/        # Common components
+├── features/          # Feature-based modules
+│   ├── auth/         # Authentication
+│   └── products/     # Products
+├── lib/              # Utility functions
+└── contexts/         # React contexts
 ```
 
-## Architecture Decisions
+## Deployment
 
-1. **Component Structure**
-   - Reusable UI components in `components/ui`
-   - Layout components in `components/layout`
-   - Clear separation of concerns
+This project is configured for easy deployment on Vercel:
 
-2. **Data Fetching**
-   - React Query for efficient data fetching and caching
-   - Custom hooks for data management
-   - Error handling and loading states
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Add environment variables in Vercel project settings
+4. Deploy!
 
-3. **Styling**
-   - Tailwind CSS for utility-first styling
-   - Responsive design with mobile-first approach
-   - Dark mode support
+## Environment Variables
 
-4. **Type Safety**
-   - TypeScript interfaces for API responses
-   - Type-safe components and functions
-   - Better developer experience and code quality
+Required environment variables:
+- `NEXT_PUBLIC_API_URL`: Base URL for the product API
 
 ## API Integration
 
-The project uses the DummyJSON API:
+The project uses the DummyJSON API for product data:
 - Base URL: https://dummyjson.com/products
 - Endpoints:
-  - GET /products - List all products
-  - GET /products/:id - Get product details
+  - `/products`: Get all products
+  - `/products/:id`: Get product details
+  - `/products/categories`: Get product categories
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
