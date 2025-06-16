@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Product Dashboard
+
+A responsive, modern product dashboard built with Next.js, TypeScript, Tailwind CSS, and React Query.
+
+## Features
+
+- 🎨 Modern and responsive UI with Tailwind CSS
+- 🔍 Product search and category filtering
+- 📱 Mobile-friendly design
+- ⚡ Fast data fetching with React Query
+- 🎯 TypeScript for type safety
+- 🌙 Dark mode support
+
+## Tech Stack
+
+- Next.js 13+ (App Router)
+- TypeScript
+- Tailwind CSS
+- React Query (TanStack Query)
+- DummyJSON API
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd product-dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  ├── app/                    # Next.js app directory
+  │   ├── products/          # Product pages
+  │   │   ├── [id]/         # Product details page
+  │   │   └── page.tsx      # Product listing page
+  │   └── layout.tsx        # Root layout
+  ├── components/            # React components
+  │   ├── ui/               # UI components
+  │   │   ├── ProductCard.tsx
+  │   │   ├── ProductGrid.tsx
+  │   │   ├── SearchBar.tsx
+  │   │   └── CategoryFilter.tsx
+  │   └── layout/           # Layout components
+  ├── lib/                  # Utility functions
+  │   ├── api.ts           # API functions
+  │   └── types.ts         # TypeScript types
+  └── hooks/               # Custom React hooks
+      └── useProducts.ts   # Product data hooks
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architecture Decisions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Component Structure**
+   - Reusable UI components in `components/ui`
+   - Layout components in `components/layout`
+   - Clear separation of concerns
 
-## Deploy on Vercel
+2. **Data Fetching**
+   - React Query for efficient data fetching and caching
+   - Custom hooks for data management
+   - Error handling and loading states
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Styling**
+   - Tailwind CSS for utility-first styling
+   - Responsive design with mobile-first approach
+   - Dark mode support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Type Safety**
+   - TypeScript interfaces for API responses
+   - Type-safe components and functions
+   - Better developer experience and code quality
+
+## API Integration
+
+The project uses the DummyJSON API:
+- Base URL: https://dummyjson.com/products
+- Endpoints:
+  - GET /products - List all products
+  - GET /products/:id - Get product details
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
